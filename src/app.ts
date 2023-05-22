@@ -4,27 +4,27 @@ const app: Express = express();
 const port: number = 8000;
 
 //라우팅
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
+app.get("/", (req, res) => {
+  res.send({ name: "jin", age: "22", friends: ["ss", "ys"] });
 });
 
-app.post("/", (req: Request, res: Response) => {
-  res.send("Got a Post request");
-});
+// app.post("/", (req: Request, res: Response) => {
+//   res.send("Got a Post request");
+// });
 
-app.get("/user", (req: Request, res: Response) => {
-  res.send("user!");
-});
+// app.get("/user", (req: Request, res: Response) => {
+//   res.send("user!");
+// });
 
-app.put("/user", (req: Request, res: Response) => {
-  res.send("Got a put request at /user");
-});
+// app.put("/user", (req: Request, res: Response) => {
+//   res.send("Got a put request at /user");
+// });
 
-app.delete("/user", (req: Request, res: Response) => {
-  res.send("Got a delete request at /user");
-});
+// app.delete("/user", (req: Request, res: Response) => {
+//   res.send("Got a delete request at /user");
+// });
 
 // 서버 대기 상태
 app.listen(port, () => {
-  console.log(`listening http://localhost:${port}`);
+  console.log(`listening http://localhost:${port}/`);
 });
