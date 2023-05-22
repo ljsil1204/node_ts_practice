@@ -8,9 +8,9 @@ app.get("/", (req, res) => {
   res.send({ name: "jin", age: "22", friends: ["ss", "ys"] });
 });
 
-// app.post("/", (req: Request, res: Response) => {
-//   res.send("Got a Post request");
-// });
+app.post("/test", (req: Request, res: Response) => {
+  res.send({ person: "sss" });
+});
 
 // app.get("/user", (req: Request, res: Response) => {
 //   res.send("user!");
