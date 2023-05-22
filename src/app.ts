@@ -1,28 +1,16 @@
 import express, { Express, Request, Response } from "express";
+import { Cat, CatType } from "./app.modal";
 
 const app: Express = express();
 const port: number = 8000;
 
-//라우팅
+//데이터 모킹
+const data = [1, 2, 3, 4];
+
 app.get("/", (req, res) => {
-  res.send({ name: "jin", age: "22", friends: ["ss", "ys"] });
+  console.log(req);
+  res.send({ cats: Cat });
 });
-
-app.post("/test", (req: Request, res: Response) => {
-  res.send({ person: "sss" });
-});
-
-// app.get("/user", (req: Request, res: Response) => {
-//   res.send("user!");
-// });
-
-// app.put("/user", (req: Request, res: Response) => {
-//   res.send("Got a put request at /user");
-// });
-
-// app.delete("/user", (req: Request, res: Response) => {
-//   res.send("Got a delete request at /user");
-// });
 
 // 서버 대기 상태
 app.listen(port, () => {
